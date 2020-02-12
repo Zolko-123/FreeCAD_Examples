@@ -14,6 +14,7 @@ In this tutorial we'll assemble 3 parts inside a single FreeCAD document, and an
 * all 3 parts and the full assembly are in 1 single FreeCAD file
 
 
+
 ### Prerequisites
 
 It is assumed that you have completed the [1st Assembly4 tutorial](../Asm4_Tutorial1/README.md) and that you have some experience with designing with FreeCAD, especially the _PartDesign_ and _Sketcher_ workbenches.
@@ -275,7 +276,7 @@ The final step: animate the assembly and check that all parts move as desired:
 
 ## Download
 
-You can download the FreeCAD document file presented in this tutorial [`here`](asm_tuto2.FCStd) .
+You can download the FreeCAD document file presented in this tutorial here : [asm_tuto2.FCStd](asm_tuto2.FCStd)
 
 
 ## Feedback

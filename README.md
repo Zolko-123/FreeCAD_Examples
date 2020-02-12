@@ -1,4 +1,4 @@
-# Repository for various FreeCAD example parts, assembmies and tutorials
+# Repository for various FreeCAD example parts, assemblies and tutorials
 
 
 
