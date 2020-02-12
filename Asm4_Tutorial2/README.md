@@ -16,7 +16,7 @@ In this tutorial we'll assemble 3 parts inside a single FreeCAD document, and an
 
 ### Prerequisites
 
-It is assumed that you have completed the [1st Assembly4 tutorial](TUTORIAL1.md) and that you have some experience with designing with FreeCAD, especially the _PartDesign_ and _Sketcher_ workbenches.
+It is assumed that you have completed the [1st Assembly4 tutorial](../Asm4_Tutorial1/README.md) and that you have some experience with designing with FreeCAD, especially the _PartDesign_ and _Sketcher_ workbenches.
 
 
 ## Create the document and the parts:
