@@ -4,7 +4,7 @@
 
 This tutorial will walk you through building the following assembly:
 
-![](Asm_tuto1_final.png)
+![](Asm_tuto1.png)
 
 * The axis is designed in FreeCAD with the PartDesign workbench
 * The bearings are imported from a STEP file
@@ -37,11 +37,17 @@ These functions are also accessible with the Assembly menu:
 We start with an empty FreeCAD.
 
 * Create 3 new documents: **File > New** (or _ctrl-n_)
-* In each document, create a new Model: **Assembly > New Model** (or _ctrl+m_)
-* Save each document in the same directory and name them:
-  * _asm_tuto1.fcstd_
-  * _axis.fcstd_
-  * _bearing.fcstd_
+* In one document, create a new Model: **Menu > Assembly > New Model** (or _ctrl+m_)
+  * this is going to be the assembly
+  * save this file as _asm_tuto1.fcstd_
+* In the second document, create a PartDesign::Body: **Menu > Assembly > New Body**
+  * call it _Axis_
+  * this is where we'll design the axis
+  * save this file as _axis.fcstd_
+* In the third document, create an App::Part: **Menu > Assembly > New Part**
+  * call it _Bearing_
+  * this is where we'll import the bearing from the STEP file
+  * save this file as _bearing.fcstd_
 * Close all 3 documents (you don't need to close FreeCAD)
 * Re-open all 3 documents
 
@@ -53,8 +59,7 @@ Switch to document "_axis_" (by clicking on its tab).
 
 ### Body
 
-* Create a new Body: **Assembly > New Body** (or _ctrl+b_)
-* Make body active (right-click on Body then choose **Toggle active body** from the context menu).
+* Make the body active (right-click on Body then choose **Toggle active body** from the context menu).
   **Result:** This will switch to the _PartDesign_ workbench.
 * Create a new Sketch (should be in the active body). In the Task view, select _XY_Plane_
 * Draw the following sketch:
@@ -68,8 +73,8 @@ Switch to document "_axis_" (by clicking on its tab).
 ### LCS_1
 
 * Switch to _Assembly4_ workbench
-* Select the root Model (remember it's an `App::Prt`)
-* Create a new Local Coordinate System (LCS) (**Assembly > New Coordinate System**). This can also be done by right-clicking on the Model in the tree, then choosing **Create > New Coordinate System** from the context menu
+* Select the body _Axis_ (remember it's a `PartDesign::Body`)
+* Create a new Local Coordinate System (LCS) (**Menu > Assembly > New Coordinate System**). Call it _LCS_1_ . This can also be done by right-clicking on the _Axis_ body in the tree, then choosing **Create > New Coordinate System** from the contextual menu
 * Edit its MapMode in the Placement in its Property View (see inlay in screenshot below on how to activate it)
 * Choose the circle as shown:
 
@@ -77,11 +82,6 @@ Switch to document "_axis_" (by clicking on its tab).
 
 * Select the option **Concentric**
 * Click **OK**
-
-* **Note:** ignore the warning:
-
-  `PartDesign::CoordinateSystem / LCS_1: Links go out of the allowed scope`
-
 * In order to make our life easier later, we'll change the basic color of the Body by right-clicking on the Body in the Model tree, and choose _Appearance_ . In the _Display Properties_ dialog change the _Shape color_ to something fancy.
 
 * Save
@@ -99,19 +99,17 @@ If you haven't done so already, download the STEP file [`bearing_20x37x9.stp`](h
 
 * Import (**File > Import**) the previously mentioned STEP file _bearing_20x37x9.stp_
 
-**Result:** This will create a bunch of solids in the bearing document, but not in the Model. This is a [documented limitation of `App::Part`](https://www.freecadweb.org/wiki/Std_Part) and must be dealt-with manually.
+**Result:** This will create a bunch of solids in the bearing document, but not in the part _Bearing_ . This is a [documented limitation of `App::Part`](https://www.freecadweb.org/wiki/Std_Part) and must be dealt-with manually.
 
 
   ![](Import_bearing.stp.png)
 
-* Select within the Model tree, all the imported solids and drag them over the Model (in the tree). **Note** how the cursor changes to a small hand and an arrow appears close to the cursor, meaning that the solids are moved:
+* Select all the imported solids within the model tree, and drag them over the Part _Bearing_ (in the tree). **Note** how the cursor changes to a small hand and an arrow appears close to the cursor, meaning that the solids are moved:
 
   ![](Move_bearingsolids.png)
 
-* You can check that the solids have indeed been moved by collapsing the Model tree (with the small triangle) and hovering over the Model in the tree with the mouse.
+* You can check that the solids have indeed been moved by collapsing the model tree (with the small triangle).
   **Note:** If it didn't work, fix it. If necessary, delete the file _bearing.fcstd_ and begin again.
-
-  ![](Show_bearingmoved.png)
 
 ### LCS
 
@@ -148,29 +146,37 @@ If you haven't done so already, download the STEP file [`bearing_20x37x9.stp`](h
 
 ### Insert axis
 
-* Select **Assembly > Link an external Part** , or in the toolbar click on :
+* Select **Menu > Assembly > Link an external Part** , or in the toolbar click on :
 
 ![](Link_Part.svg)
 
-* This will bring up the following dialog:
+* This will bring up the following dialog in the Task panel:
 
   ![](Insert_axis.png)
 
-* Select **axis#Model**
-* Leave the proposed default name _axis_
-* Click **Insert part**, it will bring up the _Place linked Part_ dialog:
+* Select **axis#Axis**
+* Enter a name, for example _axis_
+* Click **OK**, this will insert the part into the assembly.
+* Now the inserted Part needs to be placed in its correct location: since the just-inserted part is still selected, click on **Menu > Assembly > Edit Placement of a Part**:
+
+![](Place_Link.svg)
+
+it will bring up the _Place linked Part_ dialog:
 
   ![](Place_axis.png)
+  
+  
+**Note:** the Part that is being placed is transparent during this operation
+
 
 * Make the same selections as in the screenshot above
   * in the left panel _Select LCS in Part_ choose **LCS_0**
   * in the drop-down combo-box _Select part to attach to_ choose **Parent Assembly**
   * in the right panel _Select LCS in Parent_ choose **LCS_0**
-* **Note:** If you click **Cancel** in the _Place Link_ dialog before clicking **Show** or **OK**, then the linked part will still be in the assembly but without any Placement: in this case we have created a raw `App::Link` interface to the part `axis`. This link can be moved in the assembly by the built-in FreeCAD dragger (**Right Click > Transform**)
 
-* Click **Show**
+**Note:** If you click **Ignore** in the _Place Link_ dialog, then the linked part will still be in the assembly but without any Placement: in this case we have created a raw `App::Link` interface to the part `axis`. This link can be moved in the assembly by the built-in FreeCAD dragger (**Right Click > Transform**)
 
-* This has filled the _Expression Engine_ field, and a new _axis_ instance appears in the tree inside _asm_tuto1_.  This new instance has a _Position_ property with the following properties:
+* A new _axis_ instance appears in the tree inside _asm_tuto1_.  This new instance has a _Assembly_ property section with the following properties:
   * **AssemblyType** : notes which assembly solver should be applied (Asm4EE here)
   * **AttachedBy** : notes by what coordinate system in the linked part this instance is attached to the assembly, preceded by a #
   * **AttachedTo** : notes to which parent, and inside that parent to which coordinate system, separated by a #, the instance is attached
@@ -183,15 +189,16 @@ If you haven't done so already, download the STEP file [`bearing_20x37x9.stp`](h
 
 ### Insert bearing 1
 
-* Select **Assembly > Link an external Part**, select **bearing#Model**
+* Select **Assembly > Link an external Part**, select **bearing#Bearing**
 
   ![](Insert_bearing1.png)
 
 * Change the proposed name _bearing_ to _bearing_1_ (we will have 3 bearings)
 
-* Click **Insert part**
+* Click **OK**
 
-* This will bring up the _Place linked Part_ dialog:
+* This will insert a link to the _Bearing_part. 
+* Bring up the _Place linked Part_ dialog:
   * in the left panel _Select LCS in Part_ choose _LCS_1_
   * in the drop-down combo-box _Select part to attach to_ choose part _axis_
   * in the right panel _Select LCS in Parent_ choose _LCS_0_
@@ -215,13 +222,13 @@ This is easy to correct:
 
 ### Insert bearing 2
 
-* Select **Assembly > Link an external Part**, select **bearing#Model**
+* Select **Assembly > Link an external Part**, select **bearing#Bearing**
 
-* Change the proposed name _bearing_ to _bearing_2_
+* Change the proposed name to _bearing_2_
 
-* Click **Insert part**
+* Click **OK**
 
-* This will bring up the _Place Link_ dialog:
+* Bring up the _Place Link_ dialog:
   * in the left panel _Select LCS in Part_ choose **LCS_1**
   * in the drop-down combo-box **Select part to attach to** choose part **bearing_1**
   * in the right panel _Select LCS in Parent_ choose **LCS_2**
@@ -236,17 +243,14 @@ This is easy to correct:
 
 ### Insert bearing 3
 
-* Select **Assembly > Link an external Part**, select **bearing#Model**
+* This time, we'll save some time: select in the Model tree one of the previously inserted _bearing_1_ or _bearing_2_, and click on **Menu > Assembly > Link an external Part** : the tool will recognise the linked file, and will increment the previously chosen name with 1 digit and propose _bearing_3_
 
-* Change the proposed name _bearing_ to _bearing_3_
+* Click **OK**
 
-* Click **Insert part**
-
-* This will bring up the _Place Link_ dialog:
+* Bring up the _Place Link_ dialog:
   * in the left panel _Select LCS in Part_ choose **LCS_1**
   * in the drop-down combo-box _Select part to attach to_ choose part **axis**
   * in the right panel _Select LCS in Parent_ choose **LCS_1**
-  * Click **Show**
   * Orient _bearing_3_ with the buttons _Rot X_ and _Rot Y_ and _Rot Z_ until it is in its correct position
 
   ![](Place_bearing3.png)
@@ -292,7 +296,7 @@ This is where the **AttachmentOffset** property of the instance comes in play. I
 * Ignore the warnings:
   `Enumeration index -1 is out of range, ignore it`
 
-* In the Model tree, right-click on _Sketch_ in the _Body_ in the part _axis_ and choose **Edit Sketch**
+* In the Model tree, right-click on _Sketch_ in the _Revolution_ in the part _axis_ and choose **Edit Sketch**
 
 * Modify the Sketch like in the image below:
 
