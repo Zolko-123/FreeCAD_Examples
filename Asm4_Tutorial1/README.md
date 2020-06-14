@@ -189,7 +189,7 @@ it will bring up the _Place linked Part_ dialog:
 
 ### Insert bearing 1
 
-* Select **Assembly > Link an external Part**, select **bearing#Bearing**
+* Select **Assembly > Insert Part**, select **bearing#Bearing**
 
   ![](Insert_bearing1.png)
 
@@ -222,7 +222,7 @@ This is easy to correct:
 
 ### Insert bearing 2
 
-* Select **Assembly > Link an external Part**, select **bearing#Bearing**
+* Select **Assembly > Insert Part**, select **bearing#Bearing**
 
 * Change the proposed name to _bearing_2_
 
@@ -243,7 +243,7 @@ This is easy to correct:
 
 ### Insert bearing 3
 
-* This time, we'll save some time: select in the Model tree one of the previously inserted _bearing_1_ or _bearing_2_, and click on **Menu > Assembly > Link an external Part** : the tool will recognise the linked file, and will increment the previously chosen name with 1 digit and propose _bearing_3_
+* This time, we'll save some time: select in the Model tree one of the previously inserted _bearing_1_ or _bearing_2_, and click on **Menu > Assembly > Insert Part** : the tool will recognise the linked file, and will increment the previously chosen name with 1 digit and propose _bearing_3_
 
 * Click **OK**
 
