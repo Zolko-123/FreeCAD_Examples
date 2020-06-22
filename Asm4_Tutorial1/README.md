@@ -202,7 +202,6 @@ it will bring up the _Place linked Part_ dialog:
   * in the left panel _Select LCS in Part_ choose _LCS_1_
   * in the drop-down combo-box _Select part to attach to_ choose part _axis_
   * in the right panel _Select LCS in Parent_ choose _LCS_0_
-  * Click **Show**
 
   ![](Place_bearing1.png)
 
@@ -233,7 +232,6 @@ This is easy to correct:
   * in the drop-down combo-box **Select part to attach to** choose part **bearing_1**
   * in the right panel _Select LCS in Parent_ choose **LCS_2**
     **Note:** When an LCS has been renamed (as we did in the _bearing_ part) this is how it appears.
-  * Click **Show**
 
   ![](Place_bearing2.png)
 
