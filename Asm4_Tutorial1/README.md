@@ -146,7 +146,7 @@ If you haven't done so already, download the STEP file [`bearing_20x37x9.stp`](h
 
 ### Insert axis
 
-* Select **Menu > Assembly > Link an external Part** , or in the toolbar click on :
+* Select **Menu > Assembly > Insert Part** , or in the toolbar click on :
 
 ![](Link_Part.svg)
 
@@ -189,7 +189,7 @@ it will bring up the _Place linked Part_ dialog:
 
 ### Insert bearing 1
 
-* Select **Assembly > Link an external Part**, select **bearing#Bearing**
+* Select **Assembly > Insert Part**, select **bearing#Bearing**
 
   ![](Insert_bearing1.png)
 
@@ -202,7 +202,6 @@ it will bring up the _Place linked Part_ dialog:
   * in the left panel _Select LCS in Part_ choose _LCS_1_
   * in the drop-down combo-box _Select part to attach to_ choose part _axis_
   * in the right panel _Select LCS in Parent_ choose _LCS_0_
-  * Click **Show**
 
   ![](Place_bearing1.png)
 
@@ -222,7 +221,7 @@ This is easy to correct:
 
 ### Insert bearing 2
 
-* Select **Assembly > Link an external Part**, select **bearing#Bearing**
+* Select **Assembly > Insert Part**, select **bearing#Bearing**
 
 * Change the proposed name to _bearing_2_
 
@@ -233,7 +232,6 @@ This is easy to correct:
   * in the drop-down combo-box **Select part to attach to** choose part **bearing_1**
   * in the right panel _Select LCS in Parent_ choose **LCS_2**
     **Note:** When an LCS has been renamed (as we did in the _bearing_ part) this is how it appears.
-  * Click **Show**
 
   ![](Place_bearing2.png)
 
@@ -243,7 +241,7 @@ This is easy to correct:
 
 ### Insert bearing 3
 
-* This time, we'll save some time: select in the Model tree one of the previously inserted _bearing_1_ or _bearing_2_, and click on **Menu > Assembly > Link an external Part** : the tool will recognise the linked file, and will increment the previously chosen name with 1 digit and propose _bearing_3_
+* This time, we'll save some time: select in the Model tree one of the previously inserted _bearing_1_ or _bearing_2_, and click on **Menu > Assembly > Insert Part** : the tool will recognise the linked file, and will increment the previously chosen name with 1 digit and propose _bearing_3_
 
 * Click **OK**
 
