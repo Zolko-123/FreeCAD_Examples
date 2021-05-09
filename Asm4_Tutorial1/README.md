@@ -172,7 +172,7 @@ it will bring up the _Place linked Part_ dialog:
 * Make the same selections as in the screenshot above
   * in the left panel _Select LCS in Part_ choose **LCS_0**
   * in the drop-down combo-box _Select part to attach to_ choose **Parent Assembly**
-  * in the right panel _Select LCS in Parent_ choose **LCS_0**
+  * in the right panel _Select LCS in Parent_ choose **LCS_Origin**
 
 **Note:** If you click **Ignore** in the _Place Link_ dialog, then the linked part will still be in the assembly but without any Placement: in this case we have created a raw `App::Link` interface to the part `axis`. This link can be moved in the assembly by the built-in FreeCAD dragger (**Right Click > Transform**)
 
