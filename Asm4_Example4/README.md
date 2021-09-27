@@ -24,7 +24,7 @@ The dimensions:
 ![](dimensions.png)
 
 
-And here an animation of the movement of all legs:
+And here an animation of the movement of all legs (needs Assembly4 > v0.10.8)
 
 
 ![](walker_15legs_c.gif)
