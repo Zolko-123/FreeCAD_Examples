@@ -66,7 +66,7 @@ Now this leg-assembly can be imported several times
 * create a variable, call it _Assembly_Handle_
 * insert a variantLink, choose the _Walker_Leg_
 
-![](https://github.com/Zolko-123/FreeCAD_Assembly4/raw/master/Resources/icons/Variant_Link.svg)
+![](https://raw.githubusercontent.com/Zolko-123/FreeCAD_Assembly4/7cb415eaca3d0ce85d86c74e15010e470b0eca93/Resources/icons/Variant_Link.svg)
 
 * attach it the LCS origin, offset it length-wise
 * set the Variant Variable to _Variables.Assembly_Handle_ + some offset
