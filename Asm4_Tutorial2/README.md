@@ -41,7 +41,7 @@ We start with an empty FreeCAD:
 
 ## Master sketch
 
-We will first create the functional structure of the assembly, and only then will we design the parts composing the assembly. The functional structure consists of sketches and datum objects at the root of the assembly, and placed at real functional locations, like rotation axes, planes, fixation points, translation axes ... 
+We will first create the functional structure of the assembly, and only then will we design the parts constituting the assembly. The functional structure consists of sketches and datum objects at the root of the assembly, and placed at real functional locations, like rotation axes, planes, fixation points, translation axes ... 
 
 We present here a way of doing an assembly — a _functional_ assembly as opposed to a _geometrical_ assembly — that is based on the real mechanical functions of the assembly, and not on the geometrical features of the parts in the assembly. It is interesting to note that, _in fine_, all assemblies are functional assemblies, but when making a geometrical assembly you somehow reverse-engineer the functions of the geometrical features that the designer of the part has implemented to match the mechanical functions of the part. In other words, if, for example, there is a — _geometrical_ — hole in a part to hold an axis, it's because the designer knew that there is going to be a — _functional_ — rotation there, and not because of some lucky magic. 
 
