@@ -216,7 +216,7 @@ Save document.
 
 ## Assembly
 
-Now that we have created our master sketch and designed all our parts, we can assemble them. As usual in Assembly4, the assembly holds (_App::Link_) links to the (_App::Part_) parts, not the parts themselves, even though the parts are in the same document here. Thus, making assemblies with parts in the same document is identical as making assemblies with parts from external documents. Actually, it is possible to mix both methods at will. 
+Now that we have created our master sketch and designed all our parts, we can assemble them. As usual in Assembly4, the assembly holds (_App::Link_) links to the (_App::Part_) parts, not the parts themselves, even though the parts are in the same document here. Thus, making assemblies with parts in the same document is identical to making assemblies with parts from external documents. Actually, it is possible to mix both methods at will. 
 
 The only difference is that, since a FreeCAD document can only contain one Assembly4 Model, only one level assemblies are possible if everything is in the same document. For large assemblies this is a severe limitation, therefore in order to make nested assemblies — assemblies of sub-assemblies and sub-sub-assemblies — it is mandatory to have several documents. See [tutorial 1](TUTORIAL1.md) for how to make assemblies from external parts. 
 
