@@ -226,7 +226,7 @@ The only difference is that, since a FreeCAD document can only contain one Assem
 
 * Hide all three parts _base_, _disk_ and _arm_, and show the assembly _Model_
 * Insert the part _base_
-* Attach it's _LCS_1_ to the _LCS_0_ of the assembly
+* Attach its _LCS_1_ to the _LCS_0_ of the assembly
 
 ![](tuto2_insertBase.png)
 
@@ -237,14 +237,14 @@ The only difference is that, since a FreeCAD document can only contain one Assem
 
 * Set the variable _Angle_disk_ to 45 for better visualization
 * Insert the part _disk_
-* Attach it's _LCS_1001_ to the _LCS_disk_ of the assembly
+* Attach its _LCS_1001_ to the _LCS_disk_ of the assembly
 
 ![](tuto2_insertDisk.png)
 
 ### Assemble the Arm part
 
 * Insert the part _arm_
-* Attach it's _LCS_pivot_ to the _LCS_arm_ of the assembly
+* Attach its _LCS_pivot_ to the _LCS_arm_ of the assembly
   * you might need to add a rotation around Z _Rot Z_ to correctly orientate the arm
 
 ![](tuto2_insertArm.png)
