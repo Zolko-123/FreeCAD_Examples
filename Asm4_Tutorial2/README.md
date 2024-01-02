@@ -95,10 +95,10 @@ We will now create the proper master sketch of our assembly:
 **Result:** We have assigned the value of the variable _Angle_disk_ to the angle between this line and the X-axis. 
 
 * In the same way, set the length of the line to _R_disk_
-  * the edge of the line represents the position of the nipple on the _disk_ that slides in the slot of the _arm_
-* Add another line between the edge of this line and the X-axis
+  * the end of the line represents the position of the nipple on the _disk_ that slides in the slot of the _arm_
+* Add another line between the end of this line and the X-axis
   * this line represents the orientation of the _arm_
-* Set the distance between the edge of this second line and the Y-axis to _Dist_pivot_ 
+* Set the distance between the end of this second line and the Y-axis to _Dist_pivot_ 
 
 ![](tuto2_sketchFinished.png)
 
