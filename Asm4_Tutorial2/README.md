@@ -25,7 +25,8 @@ It is assumed that you have completed the [1st Assembly4 tutorial](../Asm4_Tutor
 We start with an empty FreeCAD:
 
 * Create a new document: **File > New** (or _ctrl-n_)
-* In that document, create a new Assembly4 Model: **Assembly > Create a new Model** (or _ctrl+m_)
+* In that document, create a new Assembly4 Model: **Assembly > Create a new Model** (or _ctrl+m_)<br>
+  _Note:  the "Model" nomenclature has been changed to "Assembly" in later versions of the Assembly4 workbench, after this Tutorial was written._  
 * Create also 3 new Parts: **Assembly > Create a new Part**, and call them
   * _base_
   * _disk_
